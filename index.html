@@ -537,19 +537,19 @@
     const typeNames = { monthly:'Monthly', maturity:'Maturity', annual:'Annual' };
     let lines = [
       '📊 *Abans Finance — Deposit Interest*',
-      '──────────────────────',
-      'Capital Amount:       Rs. ' + fmt(P),
-      'Interest Rate:        ' + R + '% p.a.',
-      'Period:               ' + months + ' month' + (months > 1 ? 's' : ''),
-      'Interest Type:        ' + typeNames[itype],
-      'WHT:                  ' + (whtOn ? 'Yes (10%)' : 'No'),
-      '──────────────────────',
+      '─────────────',
+      'Capital Amount: Rs. ' + fmt(P),
+      'Interest Rate: ' + R + '% p.a.',
+      'Period: ' + months + ' month' + (months > 1 ? 's' : ''),
+      'Interest Type: ' + typeNames[itype],
+      'WHT: ' + (whtOn ? 'Yes (10%)' : 'No'),
+      '─────────────',
       'Total Gross Interest: Rs. ' + fmt(grossTotal)
     ];
     if (whtOn) lines.push('WHT (' + whtRowNote + '): Rs. ' + fmt(whtPerPeriod));
-    lines.push('──────────────────────');
-    lines.push('⭐ ' + hlBadge + ': Rs. ' + fmt(hlNet) + (whtOn ? ' (after WHT)' : ''));
-    lines.push('──────────────────────');
+    lines.push('─────────────');
+    lines.push('*⭐ ' + hlBadge + ': Rs. ' + fmt(hlNet) + (whtOn ? ' (after WHT)' : ''*));
+    lines.push('─────────────');
     lines.push('_Abans Finance PLC — For guidance only_');
     return lines.join('\n');
   }
